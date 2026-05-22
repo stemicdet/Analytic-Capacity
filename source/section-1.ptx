@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Analytic Capacity Notes</title>
+  <subsection xml:id="subsection-1">
+    <title>The Painleve Problem</title>
+    
+  <definition xml:id="def-removable">
+    <title>Removable Set</title>
+    
+    
+    <statement>
+      <p>
+        A compact set <m>E \subseteq \mathbb C</m> is said to be <term>removable for bounded analytic functions</term> if for any open set <m>\Omega</m> containing <m>E</m> every bounded function analytic on <m>\Omega \setminus E</m> has an analytic extension to <m>E</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Example: A single point is removable. This is the Riemann Removable Singularities Theorem
+  </p>
+
+  <p>
+    Non-Example: The unit disk is not removable. Let <m>f(z) = \frac{1}{z}</m>. <m>f</m> is bounded and analytic on <m>\mathbb C \setminus \Delta</m> but has no analytic extension to <m>\mathbb C</m>
+  </p>
+
+  <p>
+    The Painleve problem is to determine which sets are removable for bounded analytic functions. To solve this problem Ahlfor's introduced the notion of anlaytic capacity.
+  </p>
+
+  <definition xml:id="def-admissible">
+    <title>Admissible Function</title>
+    
+    
+    <statement>
+      <p>
+        A function <m>f</m> is said to be <term>admissible</term> for a set <m>E</m> if:
+        <ol>
+          <li>
+            <p>
+              <m>f</m> is analytic on <m>\hat{C} \setminus E</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>|f(z)| \leq 1</m> on <m>\hat{C} \setminus E</m> 
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(\infty) = 0</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-analytic-cap">
+    <title>Analytic Capacity</title>
+    
+    
+    <statement>
+      <p>
+        The <term>analytic capacity</term> of a compact set <m>E</m> is denoted <m>\gamma(E)</m> and defined by <m>\gamma(E) = \sup |f'(\infty)|</m> where the supremum is taken over all admissible functions on <m>E</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Note that <m>f'(\infty) \neq \displaystyle \lim_{z\to \infty} f'(z)</m>. In fact, <m>f'(\infty) = \lim_{z\to\infty} zf(z)</m>
+  </p>
+
+  <p>
+    Another interpretation of <m>f'(\infty)</m> comes from the Laurent series expansion of <m>f</m> at the point at <m>\infty</m>
+  </p>
+
+  </subsection>
+</section>
