@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Analytic Capacity Notes</title>
-  <subsection xml:id="subsection-1">
-    <title>The Painleve Problem</title>
+  <title>The Painleve Problem</title>
+  
     
   <definition xml:id="def-removable">
     <title>Removable Set</title>
@@ -74,5 +73,116 @@
     Another interpretation of <m>f'(\infty)</m> comes from the Laurent series expansion of <m>f</m> at the point at <m>\infty</m>
   </p>
 
-  </subsection>
+  <p>
+    Suppose <m>f</m> is an analytic function in a neighborhood of <m>\infty</m> and let <m>g(z) = f(\frac{1}{z})</m>. Then <m>g</m> is analytic in a neighborhood of <m>0</m> and thus has a Taylor series expansion
+    <md>
+      g(z) = a_0 + a_1 z + a_2 z^2 \ldots
+    </md>
+    
+  </p>
+
+  <p>
+    If <m>f(\infty) = 0</m> then <m>g(0) = 0</m> and hence
+    <md>
+      g(z) = a_1 z + a_2 z^2 \ldots
+    </md>
+    
+  </p>
+
+  <p>
+    Since <m>f(z) = g(\frac{1}{z})</m>, <m>f</m> has a Laurent series expansion at <m>\infty</m> given by
+    <md>
+      f(z) = \frac{a_1}{z} + \frac{a_2}{z^2} + \ldots
+    </md>
+    
+  </p>
+
+  <p>
+    By the formula for Taylor series coefficients
+    <md>
+      a_1 = g'(0) = \lim_{z\to 0} \frac{g(z)}{z}
+    </md>
+    
+  </p>
+
+  <p>
+    Let <m>w = \frac{1}{z}</m>. Then 
+    <md>
+      g'(0) = \lim_{z\to 0} \frac{g(z)}{z} = \lim_{w\to \infty} w f(w) = f'(\infty)
+    </md>
+     and thus <m>f'(\infty) = a_1</m>, the coefficient of the <m>\frac{1}{z}</m> term in the Laurent series of <m>f</m> at <m>\infty</m>
+  </p>
+
+  <p>
+    To show how analytic capacity is used to solve the Painleve problem, Ahlfors restated it as follows
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Let <m>E</m> be a compact set in <m>\mathbb C</m>. Under what conditions does there exist a non-constant function <m>f(z)</m> which is single-valued, analytic, and bounded outside <m>E</m>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Recall that a bounded entire function is constant. This is Liouville's theorem.
+  </p>
+
+  <p>
+    Ahlfors' restatement of the problem is asking for a characterization of non-removable sets, as opposed to our original statement of the problem which asks to characterize the removable sets.
+  </p>
+
+  <theorem xml:id="thm-ahlfors">
+    <title>Characterization of Non-removable Sets</title>
+    
+    
+    <statement>
+      <p>
+        In Ahlfors' statement of the Painleve problem a sufficient and necessary condition for the existence of a function with the required properties is that <m>\gamma(E) &gt; 0</m>
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      If <m>\gamma(E) &gt; 0</m> then there exists a function <m>f(z)</m> such that <m>f'(\infty) = \gamma(E)</m>. Said function is analytic and bounded outside <m>E</m> and must be non-constant because if <m>f</m> were constant then <m>f(z) = f(\infty) = 0</m> but 
+      <md>
+        f'(\infty) = \lim_{z\to 0} zf(z) &gt; 0.
+      </md>
+      
+    </p>
+
+    <p>
+      Conversely suppose there exists a function <m>f</m> with the required properties. By subtracting a constant we may suppose that <m>f(\infty) = 0</m>. Since <m>f</m> is analytic outside <m>E</m> it has a Laurent series expansion at <m>\infty</m> that begins
+      <md>
+        \frac{c_k}{z^k} + \frac{c_{k+1}}{z^{k+1}} + \ldots
+      </md>
+       with <m>c_k \neq 0</m>. Multiplying by <m>z^{k-1}</m> gives
+
+       <md>
+        \frac{c_k}{z} + \frac{c_{k+1}}{z^2} + \ldots
+       </md>
+       and by multiplying by a suitable constant so that the function is bounded by <m>1</m> we obtain a function that begins
+       <md>
+        \frac{a}{z}+ \ldots
+       </md>
+       with <m>a \neq 0</m>.
+    </p>
+
+    <p>
+      This function is admissible for <m>E</m> and hence
+      <md>
+        \gamma(E) \geq |a| &gt; 0.
+      </md>
+      
+    </p>
+  </proof>
+
+  <p>
+    This theorem shows that a set is removable if and only if it is a set with analytic capacity <m>0</m>. The question is now, which sets are sets with analytic capacity <m>0</m>?
+  </p>
+  
+
+
 </section>
