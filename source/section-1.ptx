@@ -69,6 +69,32 @@
     Note that <m>f'(\infty) \neq \displaystyle \lim_{z\to \infty} f'(z)</m>. In fact, <m>f'(\infty) = \lim_{z\to\infty} zf(z)</m>
   </p>
 
+  <theorem xml:id="thm-f-prime-infty">
+    <statement>
+      <p>
+        <md>
+          f'(\infty) =  \lim_{z\to \infty} z(f(z)-f(\infty))
+        </md>
+        
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+       Let <m>g(w) = f(\frac{1}{w})</m>. Then 
+       <md>
+        f'(\infty) = g'(0) = \lim_{w\to 0}\frac{g(w)-g(0)}{w-0}.
+       </md>
+       Let <m>z = \frac{1}{w}</m>. Then
+       <md>
+        f'(\infty) = \lim_{z\to \infty} \frac{g(\frac{1}{z})-g(0)}{\frac{1}{z}} = \lim_{z\to \infty} z(f(z)-f(\infty)).
+       </md>
+       
+    </p>
+  </proof>
+  
+
   <p>
     Another interpretation of <m>f'(\infty)</m> comes from the Laurent series expansion of <m>f</m> at the point at <m>\infty</m>
   </p>
@@ -182,6 +208,133 @@
   <p>
     This theorem shows that a set is removable if and only if it is a set with analytic capacity <m>0</m>. The question is now, which sets are sets with analytic capacity <m>0</m>?
   </p>
+
+  <theorem xml:id="thm-">
+    <statement>
+      <p>
+        Let <m>\Delta</m> denote the closed unit disk centered at the origin in the complex plane; that is, <m>\Delta = \{z \in \mathbb C: |z| \leq 1\}</m>. Then <m>\gamma(\Delta) = 1</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Consider the function <m>f(z) = \frac{1}{z}</m>, which maps the region of <m>\mathbb C</m> outside <m>\Delta</m> into <m>\Delta</m>. We will verify that this is an admissible function.
+      <ol>
+        <li>
+          <p>
+            <m>f(z)</m> is a rational function whose only singularity occurs at <m>z = 0</m> which is not part of <m>\hat{\mathbb C} \setminus \Delta</m>. Therefore, <m>f(z)</m> is analytic on <m>\hat{\mathbb C} \setminus \Delta</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            On <m>\hat{\mathbb C} \setminus \Delta</m>, <m>|z| \geq 1</m>. Hence <m>f(z) \leq 1</m> on <m>\hat{\mathbb C} \setminus \Delta</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(\infty) = \frac{1}{\infty} = 0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Thus <m>f(z)</m> is an admissible function and hence <m>f'(\infty) \leq \gamma(\Delta)</m>. Since
+      <md>
+        f'(\infty) = \lim_{z\to \infty} zf(z) = \lim_{z\to \infty} z\cdot \frac{1}{z} = 1
+      </md>
+      <m>1 \leq \gamma(\Delta)</m>.
+    </p>
+
+    <p>
+      To show that this lower bound is also an upper bound, suppose that <m>g(z)</m> is another admissible function. and consider the function <m>h(w) = g(\frac{1}{w})</m>, which is an analytic function on the unit disk <m>\{|w|&lt; 1\}</m> that satisfies <m>g(0)  = 0</m> and <m>|g(\frac{1}{w})| \leq 1</m>.
+    </p>
+
+    <p>
+      By the Schwarz lemma, <m>|h(w)| \leq |w|</m> on the disk <m>\{|w|&lt; 1\}</m>. Setting <m>z = \frac{1}{w}</m> implies that
+      <md>
+        |g(z)| \leq |\frac{1}{z}| = |f(z)|
+      </md>
+      for all <m>z \in \hat{\mathbb C} \setminus \Delta</m>. Hence
+      <md>
+        g'(\infty) = \lim_{z\to \infty} zg(z) \leq \lim_{z\to \infty} zf(z) = f'(\infty)
+      </md>
+      and thus <m>\gamma(\Delta) = f'(\infty) = 1</m>.
+    </p>
+  </proof>
+
+  <theorem xml:id="thm-schwarz">
+    <title>Schwarz Lemma</title>
+    
+    
+    <statement>
+      <p>
+        Let <m>f(z)</m> be an analytic function on the unit disk <m>\{|z|&lt; 1\}</m> such that
+        <ol>
+          <li>
+            <p>
+              <m>|f(z)| \leq 1</m> for all, <m>z</m> and
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(0) = 0</m>.
+            </p>
+          </li>
+        </ol>
+
+        Then  <m>|f(z)| \leq |z|</m> and <m>|f'(0)| \leq 1</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Let <m>g(z) = \frac{f(z)}{z}</m>. This function is analytic on <m>\Delta \setminus \{0\}</m> and <m>\displaystyle \lim_{z\to 0} \frac{f(z)}{z} = f'(0)</m> by L'hopital's rule. Thus if we define
+      <md>
+        g(z) = \begin{cases}
+        \dfrac{f(z)}{z} \amp z \neq 0\\
+        f'(0) \amp z=0
+    \end{cases}
+      </md>
+      then <m>g(z)</m> is continuous on <m>\Delta</m> and it follows from the Riemann removable singularities theorem that <m>g</m> is also analytic on <m>\Delta</m>.
+    </p>
+
+    <p>
+      Now consider the closed disk <m>\overline{D}(0,1-\epsilon)</m> for some small <m>\epsilon &gt; 0</m>. On the boundary of the disk,
+      <md>
+        |g(z)| \leq \frac{1}{1-\epsilon}. 
+      </md>
+      
+    </p>
+
+    <p>
+      Hence by the maximum modulus theorem, <m>|g(z)| \leq \frac{1}{1-\epsilon}</m> on <m>\overline{D}(0,1-\epsilon)</m>. Letting <m>\epsilon \to 0</m> implies that <m>|g(z)| \leq 1</m> on <m>\Delta</m>; that is, <m>|f(z)| \leq |z| </m> on <m>\Delta</m>. Also <m>g(0) = f'(0)</m> so <m>|f'(0)| \leq 1</m>.
+    </p>
+  </proof>
+  
+  <p>
+    Questions to ponder:
+    <ol>
+      <li>
+        <p>
+          What is the analytic capacity of the disk centered at the origin with radius <m>r</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          What is the analytic capacity of a disk of radius <m>r</m> centered at some other point <m>z_0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          Can you prove your answers?
+        </p>
+      </li>
+    </ol>
+  </p>
+  
   
 
 
