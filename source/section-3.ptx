@@ -36,5 +36,19 @@
     </statement>
   </definition>
   
+<p>
+  To better understand approximation by rational functions, we consider the following spaces of functions
+</p>
+
+<definition xml:id="def-R(x)">
+  <title>R(X)</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>X</m> be a compact subset of <m>\mathbb C</m> and let <m>R_0(X)</m> denote the set of rational functions with poles outside <m>X</m>. The function space <m>R(X)</m> is the uniform closure of <m>R_0(X)</m>. This means that <m>R(X)</m> consists of all functions that can be uniformly approximated by rational functions with poles off <m>X</m>
+    </p>
+  </statement>
+</definition>
 
   </section>
