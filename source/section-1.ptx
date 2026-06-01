@@ -66,7 +66,7 @@
   </definition>
 
   <p>
-    Note that <m>f'(\infty) \neq \displaystyle \lim_{z\to \infty} f'(z)</m>. In fact, <m>f'(\infty) = \lim_{z\to\infty} zf(z)</m>
+    Note that <m>f'(\infty) \neq \displaystyle \lim_{z\to \infty} f'(z)</m>. In fact, <m>\displaystyle f'(\infty) = \lim_{z\to\infty} zf(z)</m>
   </p>
 
   <theorem xml:id="thm-f-prime-infty">
@@ -82,7 +82,7 @@
 
   <proof>
     <p>
-       Let <m>g(w) = f(\frac{1}{w})</m>. Then 
+       Let <m>g(w) = f(\frac{1}{w})</m>. Then we define 
        <md>
         f'(\infty) = g'(0) = \lim_{w\to 0}\frac{g(w)-g(0)}{w-0}.
        </md>
@@ -172,9 +172,9 @@
 
   <proof>
     <p>
-      If <m>\gamma(E) &gt; 0</m> then there exists a function <m>f(z)</m> such that <m>f'(\infty) = \gamma(E)</m>. Said function is analytic and bounded outside <m>E</m> and must be non-constant because if <m>f</m> were constant then <m>f(z) = f(\infty) = 0</m> but 
+      If <m>\gamma(E) &gt; 0</m> then there exists an admissible function <m>f(z)</m> such that <m>f'(\infty) &gt; 0</m>. Said function is analytic and bounded outside <m>E</m> and must be non-constant because if <m>f</m> were constant then <m>f(z) = f(\infty) = 0</m> but 
       <md>
-        f'(\infty) = \lim_{z\to 0} zf(z) &gt; 0.
+        |f'(\infty)| = \lim_{z\to 0} |zf(z)| &gt; 0.
       </md>
       
     </p>
@@ -258,7 +258,7 @@
       </md>
       for all <m>z \in \hat{\mathbb C} \setminus \Delta</m>. Hence
       <md>
-        g'(\infty) = \lim_{z\to \infty} zg(z) \leq \lim_{z\to \infty} zf(z) = f'(\infty)
+        |g'(\infty)| = \lim_{z\to \infty} |zg(z)| \leq \lim_{z\to \infty} |zf(z)| = |f'(\infty)|
       </md>
       and thus <m>\gamma(\Delta) = f'(\infty) = 1</m>.
     </p>

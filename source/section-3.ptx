@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Analytic Capacity and Rational Approximation</title>
+
+  <p>
+    The material in this section is not directly related to the project, but illustrates another motivation for studying analytic capacity
+  </p>
+
+  <p>
+    It can be difficult to perform certain calculations, such as computing the derivative, with analytic functions. For this reason we seek to approximate a given analytic function by a sequence of simpler functions, which are much easier to work with, so that we can replace the calculation with the analytic function with the calculation with a simpler function and obtain an answer which is almost the same as the exact answer. As it turns out, rational functions work well for this purpose.
+  </p>
+
+  <theorem xml:id="thm-runge">
+    <title>Runge's Theorem</title>
+    
+    
+    <statement>
+        <p>
+            Let <m>K</m> be a compact subset of <m>\mathbb C</m> and suppose <m>f</m> is analytic on <m>K</m>. If <m>A</m> is a set containing at least one complex number from each connected component of <m>\hat{\mathbb C} \setminus K</m> then there exists a sequence <m>\{f_n\}</m> of rational functions that converges uniformly to <m>f</m> in <m>K</m> and whose poles are points in <m>A</m>
+        </p>
+    </statement>
+  </theorem>
+
+  <definition xml:id="def-uniform-convergence">
+    <title>Uniform Convergence</title>
+    
+    
+    <statement>
+        <p>
+            A sequence <m>\{f_n\}</m> is said to <term>converge uniformly</term> to a function <m>f</m> on <m>K</m> if for every <m>\epsilon &gt; 0</m> there exists <m>N \in \mathbb N</m> such that whenever <m>n &gt; N</m>,
+            <md>
+                |f_n(z)-f(z)| &lt; \epsilon
+            </md>
+            for all <m>z \in K</m>
+        </p>
+    </statement>
+  </definition>
+  
+
+  </section>

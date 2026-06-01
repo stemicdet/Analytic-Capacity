@@ -1,13 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>My Additional Section</title>
-  <p>foo</p>
-  <figure xml:id="figure-tikz-example-diagram">
-    <caption>The graph <m>C_5</m> made by TikZ</caption>
-    <image xml:id="tikz-example-diagram" width="20%">
-      <description>A 5-cycle</description>
-      <latex-image> \begin{tikzpicture} \coordinate (A) at (90+360/5:1); \coordinate (B) at (90+2*360/5:1); \coordinate (C) at (90+3*360/5:1); \coordinate (D) at (90+4*360/5:1); \coordinate (E) at (90:1); \draw (A) -- (B) -- (C) -- (D) -- (E) -- (A); \foreach \x in {(A), (B), (C), (D), (E)}{ \fill \x circle (2pt); } \end{tikzpicture} </latex-image>
-    </image>
-  </figure>
-  <p>bar</p>
+  <title>Properties of Analytic Capacity</title>
+  
+<p>
+  The following are some important properties of analytic capacity. The first property is that analytic capacity is a <term>monotone set function</term>
+</p>
+
+<theorem xml:id="thm-monotone">
+  <statement>
+    <p>
+      If <m>F \subseteq E</m> then <m>\gamma(F) \leq \gamma(E)</m>
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+     Let <m>S_E</m> and <m>S_F</m> denote the sets of admissible functions for <m>E</m> and <m>F</m> respectively. If <m>f \in S_F</m> then it is analytic and <m>|f(z)| \leq 1</m> on <m>\hat{\mathbb C}\setminus F</m> and <m>f(\infty) = 0</m>. Since <m>F \subseteq E</m>, <m>f</m> is analytic and <m>|f(z)| \leq 1</m> on <m>\hat{\mathbb C}\setminus E</m> so <m>f \in S_E</m>. Since every function in <m>S_F</m> belongs to <m>S_E</m> it follows that <m>\gamma(F) \leq \gamma(E)</m>. 
+  </p>
+</proof>
+
+<p>
+  The second property is that analytic capacity is <term>translation invariant</term>
+</p>
+
+<theorem xml:id="thm-translation-invariant">
+  <statement>
+    <p>
+      Suppose <m>w \in \mathbb C</m> and let <m>w+E = \{w+z: z \in E\}</m>. Then <m>\gamma(w+E) = \gamma(E)</m>
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Let <m>S_{w+E}</m> denote the set of functions admissible on <m>w+E</m>. Then
+    <md>
+      f \in S_{w+E} \iff f-z \in S_E
+    </md>
+    Since <m>f'(\infty) = (f-w)'(\infty)</m>, <m>\gamma(E) = \gamma(w+E)</m>
+  </p>
+</proof>
+
+<p>
+  Sometimes the region outside of a set is made up of multiple pieces. An example of this is an annulus, which is a disk with a smaller disk removed from its center, so that it resembles a washer or a doughnut. In this case we distinguish between the boundaries of the set. The part of the boundary with the component that contains the point at <m>\infty</m> is called the <term>outer boundary</term> while the remaining part of the boundary is called the <term>inner boundary</term>.
+</p>
+
+<theorem xml:id="thm-outer-boundary">
+  <statement>
+    <p>
+      Analytic Capacity only depends on the outer boundary of the set.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    We will only prove the simple case that <m>E</m> is a simply connected set (that is, <m>E</m> has no holes) and <m>F</m> denotes the set <m>E</m> with a disk <m>D</m> removed from its interior. We will show that <m>\gamma(F) = \gamma(E)</m>. Because <m>F \subseteq E</m>, <m>\gamma(F) \leq \gamma(E)</m>. Now suppose that <m>f</m> is admissible on <m>E</m>; that is, <m>f</m> is analytic and <m>|f(z)| \leq 1</m> on <m>\hat{\mathbb C}\setminus E</m> and <m>f(\infty) = 0</m>. <m>f</m> can be modified to be admissible for <m>F</m> by redefining it to be equal to <m>1</m> on <m>D</m>, which does not change <m>f'(\infty)</m>. Thus <m>f'(\infty) \leq \gamma(F)</m> for all admissible functions on <m>E</m> and therefore <m>\gamma(E) \leq \gamma(F)</m> which shows that <m>\gamma(E) = \gamma(F)</m>
+  </p>
+</proof>
+
+<p>
+  The next theorem demonstrates that there is always an admissible function whose derivative at <m>\infty</m> is equal to the analytic capacity and also provides a method for calculating the analytic capacity
+</p>
+
+<theorem xml:id="thm-ahlfors-function">
+  <statement>
+    <p>
+      Let <m>E</m> be a connected compact subset of <m>\mathbb C</m> that contains more than one point. Let <m>f</m> be the conformal map of <m>\hat{\mathbb C}\setminus E</m> onto the interior of the unit disk (given by the Riemann Mapping Theorem) satisfying <m>f(\infty) = 0</m> and <m>f'(\infty) &gt; 0</m>. Then <m>\gamma(E) = f'(\infty)</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Note that <m>f</m> is analytic and <m>|f(z)| \leq 1</m> on <m>\hat{\mathbb C}\setminus E</m> and <m>f(\infty) = 0</m>. Thus <m>f</m> is admissible for <m>E</m> and <m>f'(\infty) \leq \gamma(E)</m>. 
+
+    Now suppose that <m>g</m> is also admissible for <m>E</m> and consider the composition <m>g \circ f^{-1}(w)</m>. This is an analytic function on the unit disk <m>\{|w|&lt; 1\}</m> that satisfies <m>g \circ f^{-1}(0) = 0</m> and <m>|g\circ f^{-1}(w)| \leq 1</m>. 
+
+    By Schwarz lemma, <m>|g\circ f^{-1}(w)| \leq |w|</m>. Setting <m>z = f^{-1}(w)</m> implies that <m>|g(z)| \leq |f(z)|</m> for all <m>z \in \hat{\mathbb C}\setminus E</m>. Thus
+
+    <md>
+      |g'(\infty)| = \lim_{z\to \infty} |zg(z)| \leq  \lim_{z\to \infty} |zf(z)| = |f'(\infty)|
+    </md>
+    
+    and hence <m>f'(\infty) = \gamma(E)</m>.
+    
+  </p>
+</proof>
+
+<theorem xml:id="thm-Riemann-mapping">
+  <title>Riemann Mapping Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>U</m> be an open subset of <m>\mathbb C</m> that is not all <m>\mathbb C</m> and let <m>\Delta</m> denote the open unit disk. Then there exists a function <m>f:U \to \Delta</m> that is analytic, 1-1, and onto. Such a function is called a <term>conformal map</term>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  The function in Theorem 2.4 that satisfies <m>f'(\infty) = \gamma(E)</m> is called the <term>Ahlfors function</term> for <m>E</m>.
+</p>
+
+<corollary xml:id="cor-capacity-of-disk">
+  <statement>
+    <p>
+      The analytic capacity of a disk is equal to its radius.
+    </p>
+  </statement>
+</corollary>
+
+<proof>
+  <p>
+    The conformal map between the disk with center <m>z_0</m> and radius <m>r</m> and the unit disk is 
+    <md>
+      f(z) = \frac{r}{z-z_0}.
+    </md>
+    Since <m>f'(\infty) = r</m> it follows that the analytic capacity is <m>r</m>.
+  </p>
+</proof>
+
+<p>
+  The final property involves the relationship between analytic capacity and unions of sets.
+</p>
+
+<theorem xml:id="thm-semiadditivity">
+  <statement>
+    <p>
+      Analytic Capacity is <term>semiadditive</term>. This means that if <m>E</m> and <m>F</m> are disjoint sets then there exists an absolute constant <m>C</m> such that
+      <md>
+         \gamma(E \cup F) \leq C (\gamma(E)+ \gamma(F))
+      </md>
+      
+    </p>
+  </statement>
+</theorem>
+
+<conjecture xml:id="conj-subadditive">
+  <title>Subadditivity Conjecture</title>
+  
+  
+  <statement>
+    <p>
+      Analytic Capacity is <term>subadditive</term>. This means that if <m>E</m> and <m>F</m> are disjoint sets then 
+      <md>
+        \gamma(E \cup F) \leq \gamma(E)+ \gamma(F)
+      </md>
+       
+    </p>
+  </statement>
+</conjecture>
+
+<p>
+  Questions to Ponder:
+  <ol>
+    <li>
+      <p>
+        Let <m>E</m> be the disk with radius <m>2</m> centered at the origin and let <m>F</m> be the unit disk centered at the origin. Verify that <xref ref="thm-monotone"/> is true for this example.
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>E</m> be the unit disk centered at the point <m>1+i</m> and let <m>F</m> be the unit disk centered at the origin. Verify that <xref ref="thm-translation-invariant"/> is true for this example.
+      </p>
+    </li>
+    <li>
+      <p>
+        An annulus is a disk with a hole removed from its center. Let <m>E</m> be the annulus centered at the origin whose outer radius is <m>2</m> and whose inner radius is <m>1</m> and let <m>F</m> be the unit disk centered at the origin. Verify that the Subadditivity Conjecture is true for this example. (Recall that analytic capacity only depends on the outer boundary of the set.)
+      </p>
+    </li>
+  </ol>
+</p>
+
+
+
 </section>
