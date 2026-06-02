@@ -36,7 +36,7 @@
   <p>
     Let <m>S_{w+E}</m> denote the set of functions admissible on <m>w+E</m>. Then
     <md>
-      f \in S_{w+E} \iff f-z \in S_E
+      f \in S_{w+E} \iff f-w \in S_E
     </md>
     Since <m>f'(\infty) = (f-w)'(\infty)</m>, <m>\gamma(E) = \gamma(w+E)</m>
   </p>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Boundary Integral Equation Method</title>
+
+  <p>
+    The Boundary Integral Equation Method is a numerical method for calculating the analytic capacity of $K$. It is based on the fact that the Szego kernel $S(z,a)$ is the solution of the following integral equation called the Kerzman-Stein Boundary Integral Equation.
+    <md>
+        S(z,a) - \int_{w \in \partial K} A(z,w) S(w,a) ds = \frac{1}{2\pi i} \frac{\overline{T(z)}}{\overline{a}-\overline{z}}
+    </md>
+    In the above equation $T$ is the complex unit tangent vector and 
+    <md>
+        A(z,w) = \frac{1}{2\pi i} \left( \frac{T(w)}{w-z} - \frac{\overline{T(z)}}{\overline{w}-\overline{z}} \right)
+    </md>
+    is called the <term>Kerzman-Stein kernel</term>.
+  </p>
+
+  <p>
+    The following procedure is used to numerically solve the Kerzman-Stein Boundary Integral Equation and compute the analytic capacity of $K$.
+    <ol>
+        <li>
+            <p>
+                First to avoid needing to perform calculations with the point at $\infty$ we modify the integral equation by mapping the the unbounded component $\mathbb C \setminus K$ to a bounded set $D$. This makes it so that $\gamma(K) = 2\pi S(0,0)$. where $S$ is the Szego kernel for $D$.
+            </p>
+        </li>
+        <li>
+            <p>
+                Suppose the boundary of $D$ is nice enough that we can parametrize it by some function <m>z(t)</m> with <m>0 \leq t &lt; 2\pi</m>. We approximate the integral using the trapezoid rule with $n$ equally space nodes in $[0,2\pi]$. 
+            </p>
+        </li>
+    </ol>
+  </p>
+
+  </section>

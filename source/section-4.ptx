@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Garabedian Function and Szego Kernel</title>
+
+  <p>
+    The difficulty with computing analytic capacity directly from the definition is that it is difficult to determine the Ahlfors function for most sets. Fortunately there are other methods available for calculating analytic capacity. Suppose that <m>K</m> is a compact subset of <m>\mathbb C</m> and let <m>\Omega = \hat{\mathbb{C}} \setminus K</m>. Let <m>A(\Omega)</m> denote the collection of functions that are continuous on <m>\overline{\Omega}</m>, the closure of <m>\Omega</m> and analytic on <m>\Omega</m>.
+  </p>
+
+  <theorem xml:id="thm-garabedian">
+    <title>Garabedian's Theorem</title>
+    
+    
+    <statement>
+        <p>
+            Suppose that <m>\Omega</m> is a finitely connected domain with analytic boundary. Then, there exists an analytic function <m>\psi</m> in <m>\Omega</m> which is the unique solution to the dual extremal problem
+            <md>
+                \int_{\partial \Omega} |\psi(\zeta)| |d\zeta| = \inf \left\{ \int_{\partial \Omega} |h(\zeta)| |d\zeta|: h \in A(\Omega), h(\infty) = \frac{1}{2 \pi i} \right\}
+            </md>
+            
+        </p>
+    </statement>
+  </theorem>
+
+  <p>
+    The function <m>\psi</m> is called the <term>Garabedian Function</term>. An important property of the Garabedian function is that 
+    <md>
+        \int_{\partial \Omega} |\psi(\zeta)| |d\zeta| = \gamma(K)
+    </md>
+    
+  </p>
+
+  <p>
+    Thus if we can determine the Garadeian function then we can can use it to find the analytic capacity of <m>K</m>. Unfortunately, it is difficult to compute the Garabedian function directly from the definition since this requires finding an infimum over a set of infinitely many functions.
+  </p>
+  
+  <p>
+    One approach to determining the Garabedian function uses some concepts from functional analysis. 
+  </p>
+
+  <definition xml:id="def-hardy-space">
+    <title>Hardy Space</title>
+    
+    
+    <statement>
+        <p>
+            Let <m>H^2(\partial\Omega)</m> be the set of all square integrable analytic functions on the boundary of <m>\Omega</m>. That is, <m>f</m> belongs to <m>H^2(\partial \Omega)</m> if <m>f</m> is analytic on <m>\partial \Omega</m> and
+            <md>
+                \int_{\partial \Omega} |f(z)|^2 dz &lt; \infty.
+            </md>
+           <m>H^2(\partial\Omega)</m> is a function space called the <term>Hardy Space</term>. 
+        </p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-szego-kernel">
+    <title>Szego Kernel</title>
+    
+    
+    <statement>
+        <p>
+            The <term>Szego kernel</term> is the unique function <m>S(z,a) \in H^2(\partial \Omega)</m> that represents evaluation at <m>a</m>. That is, if <m>f \in H^2(\partial\Omega)</m> then 
+            <md>
+                f(a) = \int_{\partial \Omega} f(z) \overline{S(z,a)} dz
+            </md>
+            
+        </p>
+    </statement>
+  </definition>
+
+  <p>
+    For example if <m>f(z) = \frac{1}{z}</m> and <m>a</m> is the point at <m>\infty</m> then
+    <md>
+        0 = \int_{\partial \Omega} \frac{1}{z} \overline{S(z,\infty)} dz
+    </md>
+    
+  </p>
+
+  <p>
+    The following theorem connects the Szego kernel with the Garabedian function and analytic capacity
+  </p>
+
+  <theorem xml:id="thm-szego-ker">
+    <statement>
+        <p>
+            Let <m>\Omega</m> be an unbounded domain such that <m>\partial \Omega</m> consists of finitely many analytic Jordan curves. Let <m>S(z,\infty)</m> be the Szego kernel for <m>\infty</m> and let <m>\psi(z)</m> be the Garabedian function. Then
+            <md>
+                S(z,\infty) = \frac{1}{2\pi \gamma(K)} (2\pi i \psi(z))^{1/2}
+            </md>
+            where the root is chosen so that <m>S(\infty,\infty) = 1/2\pi \gamma(K)</m>.
+        </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Thus if we can calculate <m>S(\infty,\infty)</m> then we can determine the analytic capacity of <m>K</m>.
+  </p>
+  
+
+  </section>
