@@ -37,10 +37,10 @@
   </definition>
   
 <p>
-  To better understand approximation by rational functions, we consider the following spaces of functions
+  Let <m>X</m> be a compact subset of <m>\mathbb C</m>. An important question in the theory of rational approximation is to determine when every continuous function on <m>X</m> can be uniformly approximated by rational functions with poles off <m>X</m>. We can restate this question in the language of function spaces. 
 </p>
 
-<definition xml:id="def-R(x)">
+<definition xml:id="def-RX">
   <title>R(X)</title>
   
   
@@ -50,5 +50,111 @@
     </p>
   </statement>
 </definition>
+
+<definition xml:id="def-CX">
+  <title>C(X)</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>X</m> be a compact subset of <m>\mathbb C</m>. <m>C(X)</m> denotes the space of functions that are continuous on <m>X</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Thus the previous question can be rephrased as follows. When does <m>R(X) = C(X)</m>? This question was answered by Anatoli Vitushkin using analytic capacity. 
+</p>
+
+<theorem xml:id="thm-vitushkin">
+  <title>Vitushkin's Theorem</title>
+  
+  
+  <statement>
+    <p>
+      The following are equivalent for a compact set <m>X</m>:
+      <ol>
+        <li>
+          <p>
+            <m>R(X) = C(X)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            For every open set <m>D</m>, <m>\gamma(D \setminus X) = \gamma(D)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>dxdy</m>-almost all <m>z\in X</m>, it is true that 
+            <md>
+              \limsup_{r\to 0} \frac{\gamma(B(z,r)\setminus X)}{r} &gt; 0
+            </md>
+            
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  Another use of analytic capacity occurs in the characterization of bounded point derivations. 
+</p>
+
+<definition xml:id="def-pd">
+  <title> Point Derivation</title>
+  
+  
+  <statement>
+    <p>
+      A <term>point derivation</term> on <m>R(X)</m> is a mapping <m>D: R(X) \to \mathbb C</m> defined by <m>D(f) = f'(z_0)</m> where <m>z_0</m> is a fixed point in <m>X</m>. 
+    </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-bpd">
+  <title>Bounded Point Derivation</title>
+  
+  
+  <statement>
+    <p>
+      <m>R(X)</m> admits a <term>bounded point derivation</term> at <m>z_0</m> if there exists a positive constant <m>K</m> such that
+      <md>
+        |f'(z_0)| \leq K \sup_{z \in X} |f(z)|
+      </md>
+      
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Bounded point derivations are studied with respect to approximation with derivatives. The existence of a bounded point derivation shows that the rational approximation extends to derivatives; that is, the sequence of derivatives of the rational functions converges uniformly to the derivative of the limit function.
+</p>
+
+<p>
+  Alfred Hallstrom proved a theorem characterizing bounded point derivations in terms of analytic capacity.
+</p>
+
+<theorem xml:id="thm-hallstrom">
+  <title>Hallstrom's Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Let <m>A_n(z_0)</m> denote the annulus centered at <m>z_0</m> with inner radius <m>2^{-(n+1)}</m> and outer radius <m>2^{-n}</m>. That is <m>A_n(z_0) = \{z \in \mathbb C: 2^{-(n+1)} \leq |z-z_0| \leq 2^{-n}\}</m>. Then <m>R(X)</m> admits a bounded point derivation at <m>z_0</m> if and only if the series
+      <md>
+        \sum_{n=1}^\infty 4^n \gamma(A_n(z_0)\setminus X)
+      </md>
+      converges.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  Question to Ponder: Create a set <m>X</m> by starting with the unit disk and removing a disk with radius <m>4^{-n} \cdot n^{-2}</m> from the annulus <m>A_n(0)</m> for <m>n = 1,2,3, \ldots</m>. Such a set is called a <term>roadrunner set</term>. Call this set <m>X</m> and show that <m>R(X)</m> admits a bounded point derivation at <m>0</m> by showing that the series in Hallstrom's Theorem converges.
+</p>
+
+
 
   </section>
