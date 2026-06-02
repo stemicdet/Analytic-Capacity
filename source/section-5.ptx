@@ -3,11 +3,11 @@
   <title>The Boundary Integral Equation Method</title>
 
   <p>
-    The Boundary Integral Equation Method is a numerical method for calculating the analytic capacity of $K$. It is based on the fact that the Szego kernel $S(z,a)$ is the solution of the following integral equation called the Kerzman-Stein Boundary Integral Equation.
+    The Boundary Integral Equation Method is a numerical method for calculating the analytic capacity of <m>K</m>. It is based on the fact that the Szego kernel <m>S(z,a)</m> is the solution of the following integral equation called the Kerzman-Stein Boundary Integral Equation.
     <md>
         S(z,a) - \int_{w \in \partial K} A(z,w) S(w,a) ds = \frac{1}{2\pi i} \frac{\overline{T(z)}}{\overline{a}-\overline{z}}
     </md>
-    In the above equation $T$ is the complex unit tangent vector and 
+    In the above equation <m>T</m> is the complex unit tangent vector and 
     <md>
         A(z,w) = \frac{1}{2\pi i} \left( \frac{T(w)}{w-z} - \frac{\overline{T(z)}}{\overline{w}-\overline{z}} \right)
     </md>
@@ -15,16 +15,39 @@
   </p>
 
   <p>
-    The following procedure is used to numerically solve the Kerzman-Stein Boundary Integral Equation and compute the analytic capacity of $K$.
+    The following procedure is used to numerically solve the Kerzman-Stein Boundary Integral Equation and compute the analytic capacity of <m>K</m>.
     <ol>
         <li>
             <p>
-                First to avoid needing to perform calculations with the point at $\infty$ we modify the integral equation by mapping the the unbounded component $\mathbb C \setminus K$ to a bounded set $D$. This makes it so that $\gamma(K) = 2\pi S(0,0)$. where $S$ is the Szego kernel for $D$.
+                First to avoid needing to perform calculations with the point at <m>\infty</m> we modify the integral equation by mapping the the unbounded component <m>\mathbb C \setminus K</m> to a bounded set <m>D</m>. This makes it so that <m>\gamma(K) = 2\pi S(0,0)</m>. where <m>S</m> is the Szego kernel for <m>D</m>.
             </p>
         </li>
         <li>
             <p>
-                Suppose the boundary of $D$ is nice enough that we can parametrize it by some function <m>z(t)</m> with <m>0 \leq t &lt; 2\pi</m>. We approximate the integral using the trapezoid rule with $n$ equally space nodes in $[0,2\pi]$. 
+                Suppose the boundary of <m>D</m> is nice enough that we can parametrize it by some function <m>z(t)</m> with <m>0 \leq t &lt; 2\pi</m>. We approximate the integral using the trapezoid rule with <m>n</m> equally space nodes in <m>[0,2\pi]</m>, which gives the following integral equation for the approximate solution <m>\psi_m</m>:
+                <md>
+                    \psi_n(t) + \frac{2\pi}{n} \sum_{j=1}^n A(\zeta(t), \zeta(t_j)) \psi_n(t_j) |\zeta'(t_j)| = \frac{1}{2\pi}
+                </md>
+                 
+            </p>
+        </li>
+        <li>
+            <p>
+                This equation needs to hold for all <m>t \in [0,2\pi]</m>. Instead we will only make sure that it holds for the chosen <m>n</m> nodes. For <m>n</m> sufficiently large this will provide a close approximation to <m>\psi(t)</m>. Thus we seek to solve
+                <md>
+                    \psi_n(t_k)+ \frac{i}{n} \sum_{j=1, j \neq k}^n \left( \frac{\overline{\zeta'(t_k)}}{|\zeta'(t_k)|(\overline{\zeta(t_k)}-\overline{\zeta(t_j)})}  + \frac{\zeta'(t_j)}{|\zeta'(t_j)|(\zeta(t_j)-\zeta(t_k))}\right) |\zeta'(t_j)| \psi_n(t_j) = \frac{1}{2\pi}.
+                </md>
+                for <m>k = 1, \ldots, n</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                By writing this equation with vectors, we can reduce it to a system of linear equations that can be solved using Gaussian elimination to find <m>\psi_n(t)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                Finally we use <m>\psi_n(t)</m> to find <m>S(0,0)</m> and estimate the value of the analytic capacity of <m>K</m>.
             </p>
         </li>
     </ol>
