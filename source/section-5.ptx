@@ -53,4 +53,29 @@
     </ol>
   </p>
 
+  <p>
+    In the code for running the algorithm to find the analytic capacity of the union disk, there is a line
+  </p>
+
+  <c>
+zet= exp(1i*t); % parametrization of unit disk
+    </c>
+
+
+
+    <p>
+        This represents the equation <m>z = e^{it}</m> which parametrizes the unit disk for <m>0 \leq t &lt; 2\pi</m>. If you want to find the analytic capacity of a different shape, you will need to change this to the correct parametrization.
+    </p>
+
+    <p>
+        Likewise, there is a line of code that reads
+    </p>
+
+    <c>
+        zetp=1i*exp(1i*t); % derivative of above
+    </c>
+
+    <p>
+        This represents the derivative of the parametrization <m>z' = ie^{it}</m>. If finding the analytic capacity of a different shape you will need to change this to be the derivative of your parametrization.
+    </p>
   </section>
