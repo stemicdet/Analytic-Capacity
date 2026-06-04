@@ -95,6 +95,23 @@ Then the subadditivity conjecture is equivalent to <m>R(Z,r,m) \leq 1</m> for al
  <p>
   Thus if <xref ref="conj-ratio-subadd"/> is true, then so is the Subadditivity conjecture.
  </p>
+
+ <p>
+  Younsi and Ransford proved that <xref ref="conj-ratio-subadd"/> is true when <m>n=2</m>.
+ </p>
+
+ <theorem xml:id="thm-n-equals-2">
+  <statement>
+    <p>
+      Let <m>E</m> and <m>F</m> be distinct closed disks of radius <m>r</m>. Then
+      <md>
+        \frac{\gamma(E \cup F)}{\gamma(E) + \gamma(F)}
+      </md>
+      is a decreasing function of <m>r</m>.
+    </p>
+  </statement>
+ </theorem>
+ 
   
   
 
