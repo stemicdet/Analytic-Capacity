@@ -24,7 +24,7 @@
         </li>
         <li>
             <p>
-                Suppose the boundary of <m>D</m> is nice enough that we can parametrize it by some function <m>z(t)</m> with <m>0 \leq t &lt; 2\pi</m>. We approximate the integral using the trapezoid rule with <m>n</m> equally space nodes in <m>[0,2\pi]</m>, which gives the following integral equation for the approximate solution <m>\psi_m</m>:
+                Suppose the boundary of <m>D</m> is nice enough that we can parametrize it by some function <m>\zeta(t)</m> with <m>0 \leq t &lt; 2\pi</m>. We approximate the integral using the trapezoid rule with <m>n</m> equally space nodes in <m>[0,2\pi]</m>, which gives the following integral equation for the approximate solution <m>\psi_m</m>:
                 <md>
                     \psi_n(t) + \frac{2\pi}{n} \sum_{j=1}^n A(\zeta(t), \zeta(t_j)) \psi_n(t_j) |\zeta'(t_j)| = \frac{1}{2\pi}
                 </md>
@@ -64,7 +64,7 @@ zet= exp(1i*t); % parametrization of unit disk
 
 
     <p>
-        This represents the equation <m>z = e^{it}</m> which parametrizes the unit disk for <m>0 \leq t &lt; 2\pi</m>. If you want to find the analytic capacity of a different shape, you will need to change this to the correct parametrization.
+        This represents the equation <m>\zeta = e^{it}</m> which parametrizes the unit disk for <m>0 \leq t &lt; 2\pi</m>. If you want to find the analytic capacity of a different shape, you will need to change this to the correct parametrization.
     </p>
 
     <p>
@@ -76,6 +76,6 @@ zet= exp(1i*t); % parametrization of unit disk
     </c>
 
     <p>
-        This represents the derivative of the parametrization <m>z' = ie^{it}</m>. If finding the analytic capacity of a different shape you will need to change this to be the derivative of your parametrization.
+        This represents the derivative of the parametrization <m>\zeta' = ie^{it}</m>. If finding the analytic capacity of a different shape you will need to change this to be the derivative of your parametrization.
     </p>
   </section>
