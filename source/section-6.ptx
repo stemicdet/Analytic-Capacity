@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Subadditivity Conjecture</title>
+
+  <p>
+    Recall that the subaddivity conjecture is that <m>\gamma(E \cup F) \leq \gamma(E) + \gamma(F)</m> for all compact sets <m>E</m> and <m>F</m>. 
+  </p>
+
+  <p>
+    The following results are known concerning this conjecture.
+  </p>
+
+  <theorem xml:id="thm-subadd-connective">
+    <statement>
+      <p>
+        If <m>E</m> and <m>F</m> are disjoint <em>connected</em> compact sets then <m>\gamma(E \cup F) \leq \gamma(E) + \gamma(F)</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <theorem xml:id="thm-disks-suffice">
+    <statement>
+      <p>
+        The following are equivalent:
+        <ol>
+          <li>
+            <p>
+              <m>\gamma(E \cup F) \leq \gamma(E) + \gamma(F)</m> for all compact sets <m>E</m> and <m>F</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\gamma(E \cup F) \leq \gamma(E) + \gamma(F)</m> for all disjoint compact sets <m>E</m> and <m>F</m> that are finite unions of disjoint closed disks, all with the same radius.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    The above theorem implies that if the subadditivity conjecture is false, then there must be a counterexample consisting of sets <m>E</m> and <m>F</m> that are finite unions of disjoint closed disks, all with the same radius. It also implies that to prove the subadditivity conjecture, it is enough to prove it only for sets of this type.
+  </p>
+
+  <p>
+    We now consider a reformulation of the subadditivity conjecture due to Younsi and Ransford. Let <m>Z = (z_1, \ldots, z_n) \in \mathbb C^n</m> and <m>m \in \{1, 2, \ldots, n-1\}</m>. Let <m>r &gt; 0</m> be chosen sufficiently small so that the disks <m>\overline{D}(z_j,r)</m> are disjoint. Let 
+    <md>
+      E = \bigcup_{j=1}^m \overline{D}(z_j,r)
+    </md>
+
+    and let 
+
+    <md>
+       F = \bigcup_{j=m+1}^n \overline{D}(z_j,r).
+    </md>
+    
+Define 
+
+<md>
+  R(Z,r,m) = \frac{\gamma(E \cup F)}{\gamma(E) + \gamma(F)}.
+</md>
+
+Then the subadditivity conjecture is equivalent to <m>R(Z,r,m) \leq 1</m> for all <m>Z,r,m</m>.
+    
+  </p>
+
+ <p>
+  Based on this reformulation, Younsi and Ransford made the following conjecture.
+ </p>
+
+ <conjecture xml:id="conj-ratio-subadd">
+  <statement>
+    <p>
+      Fix <m>Z = (z_1, \ldots, z_n) \in \mathbb C^n</m> and <m>m \in \{1, 2, \ldots, n-1\}</m>. Then <m>R(Z,r,m)</m> decreasing function of <m>r</m>.
+    </p>
+  </statement>
+ </conjecture>
+
+ <p>
+  They also proved 
+ </p>
+
+ <theorem xml:id="thm-expansion-for-R">
+  <statement>
+    <p>
+      Fix <m>z_1, z_2, \ldots z_n \in \mathbb C</m> and fix <m>m \in \{1,2, \ldots, n-1\}</m>. Then
+      <md>
+        R(Z,r,m) = 1 - Cr^2+O(r^3)
+      </md>
+      as <m>r\to 0</m> where <m>C</m> is a strictly positive constant depending only on <m>m,n</m> and <m>z_1, \ldots, z_n</m>.
+    </p>
+  </statement>
+ </theorem>
+ 
+ <p>
+  Thus if <xref ref="conj-ratio-subadd"/> is true, then so is the Subadditivity conjecture.
+ </p>
+  
+  
+
+  </section>
