@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-7" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Schwarz-Christoffel Transformation</title>
+<subsection xml:id="subsec-Introduction">
+  <title>Introduction</title>
+  
+
+
+  <p>
+    The <term>Schwarz-Christoffel transformation</term> is a conformal mapping of the upper half-plane to the interior of a polygon in the complex plane. Theoretically the Schwarz-Christoffel transformation can be used to determine the Ahlfors function for polygonal regions; however, in practice, the formula for the Schwarz-Christoffel transformation cannot be explicitly computed. 
+  </p>
+
+  <p>
+    The function <m>f(z) = \frac{z-i}{z+i}</m> is a conformal map from the upper half plane to the unit disk. If <m>g(z)</m> is a conformal map from the upper half plane to a polygon <m>P</m>, then <m>g^{-1}</m> is a conformal map from the compliment of <m>P</m> to the lower half plane and <m>-g^{-1}</m> is a conformal map from the compliment of <m>P</m> to the upper half plane. Thus <m>f^{-1}(-g^{-1})</m> is a conformal map of the compliment of <m>P</m> to the unit disk and hence is the Ahlfors function (up to a scaling and translation).
+  </p>
+
+  <p>
+    The Schwarz-Christoffel transformation maps the real axis to the boundary of the polygon <m>P</m>. Suppose <m>P</m> has interior angles <m>\alpha</m>, <m>\beta</m>, <m>\gamma, \ldots</m>
+  </p>
+
+  <p>
+    The function 
+
+    <md>
+        f(\zeta) = \int^\zeta \frac{K}{(w-a)^{1-\frac{\alpha}{\pi}}(w-b)^{1-\frac{\beta}{\pi}}(w-c)^{1-\frac{\gamma}{\pi}}\ldots}dw
+    </md>
+    
+where <m>K</m> is a constant and <m>a &lt; b &lt; c &lt; \ldots</m> are points on the real axis is a conformal map of the upper half plane to <m>P</m> called the Schwarz-Christoffel transformation.
+  </p>
+
+  <p>
+    By choosing one of the points on the real axis to be the point at <m>\infty</m> we can simplify this expression as
+
+    <md>
+        f(\zeta) = \int^\zeta \frac{K}{(w-b)^{1-\frac{\beta}{\pi}}(w-c)^{1-\frac{\gamma}{\pi}}\ldots}dw
+    </md>
+
+  </p>
+
+  <p>
+    To map to a specific polygon we must choose the points on the real axis so that they generate the correct polygon side lengths.
+  </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-Equilateral-Triangle">
+    <title>Equilateral Triangle</title>
+    
+
+    <p>
+        In an equilateral triangle, <m>\alpha = \beta = \gamma = \frac{2\pi}{3}</m>. If we take <m>K=1</m>, <m>a=-1</m> and <m>b=1</m> then the Schwarz-Christoffel transformation is
+
+        <md>
+            f(\zeta) = \int^\zeta \frac{1}{(w+1)^{\frac{1}{3}}(w-1)^{\frac{1}{3}}} dw = \int^\zeta \frac{1}{(w^2-1)^{\frac{1}{3}}} dw
+        </md>
+        
+        which has no elementary antiderivative.
+
+    </p>
+
+  </subsection>
+
+  <subsection xml:id="subsec-Rectangle">
+    <title>Rectangle</title>
+
+
+    <p>
+        In a rectangle <m>\alpha = \beta = \gamma = \delta = \frac{\pi}{2}</m>. If we take <m>K=1</m>, <m>a = -1</m> <m>b=0</m>, <m>c=1</m> then the Scwarz Christoffel transformation is 
+
+        <md>
+            f(\zeta) = \int^\zeta \frac{1}{w^{\frac{1}{2}}(w-1)^{\frac{1}{2}}(w+1)^{\frac{1}{2}}} dw = \int^\zeta \frac{1}{(w^3-w)^{\frac{1}{2}}} dw.
+        </md>
+        
+This also has no elementary antiderivative.
+    </p>
+
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Semi-infinite-Strip">
+    <title>Semi-infinite Strip</title>
+
+    <p>
+        A semi-infinite strip in the complex plane can be thought of as a limit of a triangle with vertices <m>P=0</m>, <m>Q=\pi i</m> and <m>R</m> a large real number as <m>R \to \infty</m>.
+    </p>
+
+    <p>
+        In the limit these angles are <m>\alpha=0</m>, <m>\beta = \frac{\pi}{2}</m> and <m>\gamma = \frac{\pi}{2}</m>. If we take <m>f(-1) = Q</m> and <m>f(1) = P</m> then the Schwarz-Christoffel transformation is 
+
+
+        <md>
+            f(\zeta) = \int^\zeta \frac{K}{(w-1)^{\frac{1}{2}}(w+1)^{\frac{1}{2}}} dw = \int^\zeta \frac{K}{(w^2-1)^{\frac{1}{2}}} dw
+        </md>
+        
+
+    </p>
+
+    <p>
+        This integral has an antiderivative and is equal to 
+
+        <md>
+            f(\zeta) = K \arccosh(\zeta) + C
+        </md>
+        
+ where <m>C</m> is a constant. As a complex valued function, <m>\cosh(z) = \frac{e^z+e^{-z}}{2}</m>.
+    </p>
+
+    <p>
+        Since <m>\cosh(0) = 1</m>, <m>f(1) = C</m> and hence <m>C =0</m>
+    </p>
+
+    <p>
+        Since <m>\cosh(\pi i) = -1</m>, <m>f(-1) = K \pi i</m> and hence <m>K = 1</m>.
+    </p>
+
+    <p>
+        Thus <m>f(\zeta) = \arccosh(\zeta)</m> is a conformal map from the upper half plane to the semi-infinite strip.
+    </p>
+    
+  </subsection>
+
+
+  </section>
