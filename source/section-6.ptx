@@ -71,7 +71,7 @@ Then the subadditivity conjecture is equivalent to <m>R(Z,r,m) \leq 1</m> for al
  <conjecture xml:id="conj-ratio-subadd">
   <statement>
     <p>
-      Fix <m>Z = (z_1, \ldots, z_n) \in \mathbb C^n</m> and <m>m \in \{1, 2, \ldots, n-1\}</m>. Then <m>R(Z,r,m)</m> decreasing function of <m>r</m>.
+      Fix <m>Z = (z_1, \ldots, z_n) \in \mathbb C^n</m> and <m>m \in \{1, 2, \ldots, n-1\}</m>. Then <m>R(Z,r,m)</m> is a decreasing function of <m>r</m>.
     </p>
   </statement>
  </conjecture>
