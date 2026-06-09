@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="section-7" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Schwarz-Christoffel Transformation</title>
-<subsection xml:id="subsec-Introduction">
-  <title>Introduction</title>
+
   
 
 
@@ -41,7 +40,7 @@ where <m>K</m> is a constant and <m>a &lt; b &lt; c &lt; \ldots</m> are points o
     To map to a specific polygon we must choose the points on the real axis so that they generate the correct polygon side lengths.
   </p>
 
-  </subsection>
+
 
   <subsection xml:id="subsec-Equilateral-Triangle">
     <title>Equilateral Triangle</title>
@@ -65,7 +64,7 @@ where <m>K</m> is a constant and <m>a &lt; b &lt; c &lt; \ldots</m> are points o
 
 
     <p>
-        In a rectangle <m>\alpha = \beta = \gamma = \delta = \frac{\pi}{2}</m>. If we take <m>K=1</m>, <m>a = -1</m> <m>b=0</m>, <m>c=1</m> then the Scwarz Christoffel transformation is 
+        In a rectangle <m>\alpha = \beta = \gamma = \delta = \frac{\pi}{2}</m>. If we take <m>K=1</m>, <m>a = -1</m> <m>b=0</m>, <m>c=1</m> then the Schwarz Christoffel transformation is 
 
         <md>
             f(\zeta) = \int^\zeta \frac{1}{w^{\frac{1}{2}}(w-1)^{\frac{1}{2}}(w+1)^{\frac{1}{2}}} dw = \int^\zeta \frac{1}{(w^3-w)^{\frac{1}{2}}} dw.
@@ -99,7 +98,7 @@ This also has no elementary antiderivative.
         This integral has an antiderivative and is equal to 
 
         <md>
-            f(\zeta) = K \arccosh(\zeta) + C
+            f(\zeta) = K \cosh^{-1}(\zeta) + C
         </md>
         
  where <m>C</m> is a constant. As a complex valued function, <m>\cosh(z) = \frac{e^z+e^{-z}}{2}</m>.
@@ -114,7 +113,7 @@ This also has no elementary antiderivative.
     </p>
 
     <p>
-        Thus <m>f(\zeta) = \arccosh(\zeta)</m> is a conformal map from the upper half plane to the semi-infinite strip.
+        Thus <m>f(\zeta) = \cosh^{-1}(\zeta)</m> is a conformal map from the upper half plane to the semi-infinite strip.
     </p>
     
   </subsection>
